@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Geog 483 Leaflet Tutorial</title>
+	<!-- This tutorial is based on the official Leaflet quickstart: http://leafletjs.com/examples/quick-start/ -->
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+<style>
+    	body { margin:0; padding:0; }
+    	#mapid { position:absolute; top:50px; bottom:50px; left:50px; width:500px; height:500px;}
+</style>
+
+<div id="mapid"</div>
+<script>
+
+	var mymap = L.map('mapid').setView([43.47, -80.525], 15);
+
+	L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
+	}).addTo(mymap);
+
+	var watpark = {
+	"type": "FeatureCollection",
+	"features": [
+	    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.52828311920166,
+          43.47369501138152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.52697420120239,
+          43.464522628260525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.52684545516968,
+            43.464538202246786
+          ],
+          [
+            -80.53014993667603,
+            43.46981755236419
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.52968323230743,
+              43.4707012923209
+            ],
+            [
+              -80.53092241287231,
+              43.47024969113808
+            ],
+            [
+              -80.53101360797882,
+              43.47005892755574
+            ],
+            [
+              -80.531045794487,
+              43.46993824008046
+            ],
+            [
+              -80.53097069263458,
+              43.469782513949795
+            ],
+            [
+              -80.53085267543793,
+              43.46969686440691
+            ],
+            [
+              -80.53073465824127,
+              43.4696735054196
+            ],
+            [
+              -80.53058445453644,
+              43.469650146423284
+            ],
+            [
+              -80.53046107292175,
+              43.4696579327564
+            ],
+            [
+              -80.52921652793884,
+              43.470117324634685
+            ],
+            [
+              -80.52912533283234,
+              43.47028862240744
+            ],
+            [
+              -80.52912533283234,
+              43.470385950471126
+            ],
+            [
+              -80.52913069725037,
+              43.47045991969469
+            ],
+            [
+              -80.52920043468475,
+              43.470537781937516
+            ],
+            [
+              -80.52926480770111,
+              43.470600071659526
+            ],
+            [
+              -80.52938818931578,
+              43.47065846821561
+            ],
+            [
+              -80.5295330286026,
+              43.4706857199225
+            ],
+            [
+              -80.52968323230743,
+              43.4707012923209
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+};
+
+ L.geoJson( watpark,{ 
+ 	style: function (feature) {
+        return { opacity: 1, fillOpacity: 0.60, fillColor: "#D7DE12" };
+    }
+}).addTo(mymap);
+</script>
+
+
+
+</body>
+</html>
