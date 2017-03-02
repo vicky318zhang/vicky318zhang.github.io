@@ -1,7 +1,7 @@
 {"type":"FeatureCollection","features":
  [{"type":"Feature","properties":
-   {"marker-size": "medium",
-    "marker-symbol": "bus",
+   {"marker-size": "large",
+    "marker-symbol": "cafe",
     "marker-color": "#fff",
     "stroke":"#555555",
     "stroke-opacity":1.0,
